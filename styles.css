@@ -5,32 +5,36 @@
     box-sizing: border-box;
 }
 
-/* Body styles */
+/* Global styles */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f8f8f8;
     color: #333;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Header styles */
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #eee; /* Add a border to separate header from content */
+    padding: 20px 0;
+    border-bottom: 2px solid #eee;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
 }
 
 nav ul li {
@@ -42,6 +46,10 @@ nav ul li a {
     color: #fff;
     font-weight: bold;
     transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -49,28 +57,24 @@ nav ul li a:hover {
 }
 
 /* Main section styles */
-main {
-    padding: 20px;
-}
-
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .section h2 {
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    font-size: 2rem;
     color: #333;
 }
 
 /* Project styles */
-.project-list {
+.list-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
 
-.project {
+.list-container .list-item {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
@@ -78,21 +82,21 @@ main {
     transition: transform 0.3s ease;
 }
 
-.project:hover {
+.list-container .list-item:hover {
     transform: translateY(-5px);
 }
 
-.project h3 {
+.list-container .list-item h3 {
     margin-bottom: 10px;
     color: #333;
 }
 
-.project p {
+.list-container .list-item p {
     margin-bottom: 15px;
     color: #666;
 }
 
-.project a.btn {
+.list-container .list-item a.btn {
     display: inline-block;
     padding: 8px 16px;
     background-color: #333;
@@ -102,54 +106,19 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.project a.btn:hover {
+.list-container .list-item a.btn:hover {
     background-color: #555;
 }
 
-/* Education styles */
-.education-list {
-    list-style: none;
-}
-
-.education-item {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.education-item h3 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.education-item p {
-    color: #666;
-}
-
-/* Skills styles */
-.skills-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.skills-list li {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 10px 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #333;
-}
-
-/* Contact styles */
+/* Education, Skills, and Contact styles */
+.list-container,
+.skills-list,
 .contact-list {
     list-style: none;
 }
 
+.list-container .list-item,
+.skills-list li,
 .contact-list li {
     background-color: #fff;
     border-radius: 8px;
@@ -159,7 +128,8 @@ main {
     color: #333;
 }
 
-.contact-list li strong {
-    display: block;
-    margin-bottom: 5px;
+/* Add hover effect to contact links */
+.contact-list li a:hover {
+    color: #ff6347; /* Change color to a shade of red on hover */
+    
 }
